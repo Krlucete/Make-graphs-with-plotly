@@ -19,7 +19,9 @@ cum_sum_min <- csvData$cum_sum_min
 cum_sum_mean <- csvData$cum_sum_mean
 
 data <- data.frame(RGEN,cum_sum_max,cum_sum_min,cum_sum_mean)
-data$RGEN <- factor(data$RGEN,levels = data[["RGEN"]])
+data$RGEN <- factor(data$RGEN, levels = data[["RGEN"]])
+zero_data <- data.frame(RGEN="NONE",cum_sum_max=0,cum_sum_min=0,cum_sum_mean=0)
+data <- rbind(zero_data,data)
 
 p <- plot_ly(data, x = ~RGEN, y = ~cum_sum_max, type = 'scatter', mode = 'markers',
                           showlegend = FALSE, name = 'cum_sum_max') %>%
@@ -29,7 +31,7 @@ p <- plot_ly(data, x = ~RGEN, y = ~cum_sum_max, type = 'scatter', mode = 'marker
                add_trace(x = ~RGEN, y = ~cum_sum_mean, type = 'scatter', mode = 'markers',
                          name = 'cum_sum_mean') %>%
                layout(title = "Mean, High and Low Count of RGEN",
-                      paper_bgcolor='rgb(255,255,255)', plot_bgcolor='rgb(229,229,229)',
+                      paper_bgcolor='rgb(255,255,255)', plot_bgcolor='rgb( m229,229,229)',
                       xaxis = list(title = "RGEN",
                                    gridcolor = 'rgb(255,255,255)',
                                    showgrid = TRUE,
@@ -40,8 +42,9 @@ p <- plot_ly(data, x = ~RGEN, y = ~cum_sum_max, type = 'scatter', mode = 'marker
                                    zeroline = FALSE),
                       yaxis = list(title = "Normalization of Count",
                                    autotick=FALSE,
-                                   tick0 = 0,
-                                   dtick=0.1,
+                                   tick0=0,
+                                   dtick=0.05,
+                                   tickwidth=1,
                                    gridcolor = 'rgb(255,255,255)',
                                    showgrid = TRUE,
                                    showline = FALSE,
