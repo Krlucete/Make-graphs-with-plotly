@@ -1,6 +1,4 @@
-setwd("/Users/lucas/Desktop/R")
-Sys.setenv("plotly_username" = "LEEDOHYEON")
-Sys.setenv("plotly_api_key" = "tRssVfJLT6LEb8AGXLzR")
+setwd("/Users/lucas/Desktop/R/Make-graphs-with-plotly")
 
 #FILE input
 csvData <- read.csv(file="combine.csv", header=TRUE, sep=",")

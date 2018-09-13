@@ -1,4 +1,4 @@
-setwd("/Users/lucas/Desktop/R")
+setwd("/Users/lucas/Desktop/R/Make-graphs-with-plotly")
 
 input_file <- read.table(file="input1.txt", sep="\t", header=F, stringsAsFactors=F, na.strings="NA")
 RGEN       <- input_file[,3]
