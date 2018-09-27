@@ -2,7 +2,7 @@ setwd("/Users/lucas/Desktop/R/Make-graphs-with-plotly")
 
 #FILE input
 csvData <- read.csv(file="combine.csv", header=TRUE, sep=",")
-csvData <- csvData[,2:8]
+csvData <- csvData[,2:11]
 
 totalMean <- sum(csvData$mean)
 
