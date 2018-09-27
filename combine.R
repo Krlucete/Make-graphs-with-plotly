@@ -35,7 +35,7 @@ rm(input1_count)
 rm(input2_count)
 rm(input3_count)
 
-mean <- apply(collection_of_count,1,mean,na.rm=TRUE)
+mean <- apply(collection_of_count,1,sum,na.rm=TRUE)/3
 min  <- apply(collection_of_count,1,min,na.rm=TRUE)
 max  <- apply(collection_of_count,1,max,na.rm=TRUE)
 
